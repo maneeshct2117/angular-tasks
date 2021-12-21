@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+
+  <body>
+    <h1>Welcome to {{ uname }}</h1>
+
+    <hr>
+    <app-emp></app-emp>
+    <h3>Programming Languages</h3>
+    <ol>
+      <li *ngFor="let lang of languages">
+        {{lang}}
+      </li>
+    </ol>  
+  </body>
+
+  <hr />
+
+  <app-task></app-task>
+</html>

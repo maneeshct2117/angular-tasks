@@ -1,0 +1,86 @@
+<p>Array Of Technologies are :
+    <span *ngFor="let i of tech" >
+        {{i}} ,
+    </span>
+
+</p>
+
+<hr>
+<fieldset>
+    <legend>Add Product</legend>
+    <br><br>
+     Product Id  :   <input  type="text"  [(ngModel)]="productId"   />
+    <br><br>
+     Product Name  :   <input  type="text"  [(ngModel)]="productName"   />
+     <br/><br/>
+     Unit Price   :   <input  type="text"  [(ngModel)]="productPrice"   />
+     <br/><br/>
+     Quantity   :   <input  type="text"  [(ngModel)]="productQuantity"   />
+     <br/><br/>
+     Product Category  :   <input  type="text"  [(ngModel)]="productCategory"   />
+     <br><br>
+     <button  (click)="addProduct_click()">Add</button>
+     <button  (click)="updateProduct_click()">Update</button>
+
+    
+</fieldset>
+<hr>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Action</th>
+
+    </tr>
+
+    <tr *ngFor="let prod of product" [attr.id]="prod.id">
+        <td>{{prod.id}}</td>
+        <td>{{prod.name}}</td>
+        <td>{{prod.price}}</td>
+        <td>{{prod.quantity}}</td>
+        <td>{{prod.category}}</td>
+        <button id="edit" (click)="editRow(prod.id)">Edit</button>
+        <button id="remove" (click)="deleteRow(prod.id)">Delete</button>
+    </tr>
+
+</table>
+
+<hr>
+<hr>
+
+<div  class="row" >
+    <div class="column" *ngFor="let category of categories" style="background-color: rgb(241, 241, 241);" >
+
+        <img height="50" width="50" src={{category.path}}>
+        <h3>{{category.title}}</h3>
+        <h5>{{category.description}}</h5>
+
+        
+
+
+    </div>
+
+</div>
+
+<br>
+<br>
+<hr>
+<fieldset>
+    <legend>Price Calculation</legend>
+    <br>
+     Product Name  :   <input  type="text"  [(ngModel)]="pName"   />
+     <br/><br/>
+     Unit Price   :   <input  type="text"  [(ngModel)]="pPrice"   />
+     <br/><br/>
+     Quantity   :   <input  type="text"  [(ngModel)]="pQuantity"   />
+     <br/><br/>
+     <button  (click)="getTotalAmount_click()">Total</button>
+     <p> Total amount is :- {{result}} </p>
+</fieldset>
+
+
+
+
